@@ -8,6 +8,7 @@ API REST desenvolvida com FastAPI para consulta de endereços via ViaCEP, utiliz
 
 
 🔗 **Acesse online:** https://fastapi-proxy-endereco.onrender.com
+
 📄 **Documentação da API:** https://fastapi-proxy-endereco.onrender.com/docs
 
 > Hospedado no plano gratuito do Render: após um período sem acessos, o primeiro carregamento pode levar cerca de um minuto.
