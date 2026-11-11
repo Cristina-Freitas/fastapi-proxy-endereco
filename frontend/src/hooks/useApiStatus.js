@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from 'react'
 import { verificarApi } from '../services/enderecoApi'
 
-/** Disponibilidade da API via GET /: 'checking' | 'online' | 'offline'. */
+/** Disponibilidade da API via GET /api-status: 'checking' | 'online' | 'offline'. */
 export function useApiStatus(intervaloMs = 30000) {
   const [status, setStatus] = useState('checking')
 

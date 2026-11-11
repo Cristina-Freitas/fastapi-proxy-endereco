@@ -19,8 +19,10 @@ app = FastAPI(
 )
 
 
-@app.get("/")
-def inicio():
+# Verificação de disponibilidade usada pelo selo "API Online/Offline" do frontend.
+# Fica fora de "/" para que a raiz seja servida pelo frontend (mount no final do arquivo).
+@app.get("/api-status")
+def api_status():
     return {"mensagem": "API de endereços funcionando!"}
 
 

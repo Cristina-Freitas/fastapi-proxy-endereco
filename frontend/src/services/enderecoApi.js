@@ -88,7 +88,7 @@ export async function buscarLocalizacao(cep, { signal } = {}) {
   return { latitude, longitude, precisao, aproximada: Boolean(aproximada) }
 }
 
-/** GET / (via /api-status) — informa se o backend está respondendo. */
+/** GET /api-status — informa se o backend está respondendo. */
 export async function verificarApi({ timeoutMs = 5000 } = {}) {
   const controlador = new AbortController()
   const temporizador = setTimeout(() => controlador.abort(), timeoutMs)

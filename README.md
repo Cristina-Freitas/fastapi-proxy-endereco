@@ -9,7 +9,7 @@ API REST desenvolvida com FastAPI para consulta de endereços via ViaCEP, utiliz
 - Mensagens amigáveis para CEP inválido (400), não encontrado (404), serviço indisponível (502) e falha de conexão com o backend.
 - Mapa real (React Leaflet + OpenStreetMap) com marcador, centralizado no endereço consultado. Quando o logradouro não é localizado, a posição é aproximada pelo bairro ou pela cidade e isso é indicado na tela. Se não houver localização confiável, um aviso é exibido no lugar do mapa.
 - Histórico das consultas bem-sucedidas no LocalStorage (reconsultar com um clique, limpar, persiste ao atualizar a página).
-- Indicador "API Online/Offline" baseado em `GET /`.
+- Indicador "API Online/Offline" baseado em `GET /api-status`.
 - Páginas: **Consultar CEP**, **Histórico** e **Sobre**. Layout responsivo (desktop, tablet e celular).
 
 ## Estrutura
@@ -124,7 +124,7 @@ npm run preview
 
 | Método | Rota | Descrição |
 |---|---|---|
-| GET | `/` | Verificação de disponibilidade |
+| GET | `/api-status` | Verificação de disponibilidade |
 | GET | `/endereco/{cep}` | Retorna `logradouro`, `bairro`, `cidade`, `estado` e `regiao` |
 | GET | `/endereco/{cep}/localizacao` | Retorna `latitude`, `longitude`, `precisao` (`logradouro`, `bairro` ou `cidade`) e `aproximada` |
 

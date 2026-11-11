@@ -37,10 +37,11 @@ class BaseTestCase(unittest.TestCase):
 
 
 class TestEndereco(BaseTestCase):
-    def test_raiz_responde(self):
-        resposta = self.client.get("/")
+    def test_api_status_responde(self):
+        resposta = self.client.get("/api-status")
         self.assertEqual(resposta.status_code, 200)
-        self.assertIn("mensagem", resposta.json())
+        # O frontend considera a API online quando "mensagem" é uma string.
+        self.assertIsInstance(resposta.json().get("mensagem"), str)
 
     def test_cep_valido_retorna_somente_os_campos_esperados(self):
         with patch("app.main.consultar_cep", AsyncMock(return_value=VIACEP_FARIA_LIMA)):

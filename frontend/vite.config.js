@@ -7,12 +7,8 @@ const BACKEND = 'http://127.0.0.1:8000'
 // Assim não há CORS e o frontend nunca consulta o ViaCEP diretamente.
 const proxy = {
   '/endereco': { target: BACKEND, changeOrigin: true },
-  // GET / do FastAPI, usado para saber se a API está disponível.
-  '/api-status': {
-    target: BACKEND,
-    changeOrigin: true,
-    rewrite: () => '/',
-  },
+  // Verificação de disponibilidade da API (selo "API Online/Offline").
+  '/api-status': { target: BACKEND, changeOrigin: true },
 }
 
 export default defineConfig({
