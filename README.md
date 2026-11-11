@@ -1,4 +1,4 @@
-# fastapi-proxy-endereco
+# Fastapi-proxy-endereco
 
 API REST desenvolvida com FastAPI para consulta de endereços via ViaCEP, utilizando Pydantic e requisições assíncronas, acompanhada de um frontend em React com histórico de consultas e mapa interativo.
 
