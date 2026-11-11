@@ -1,0 +1,18 @@
+{
+  "name": "fastapi-proxy-endereco",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Scripts de desenvolvimento: sobem o backend (FastAPI) e o frontend (React) juntos.",
+  "scripts": {
+    "setup": "node scripts/setup.js",
+    "dev": "concurrently --kill-others --names api,web --prefix-colors cyan,magenta \"node scripts/run-api.js\" \"npm --prefix frontend run dev\"",
+    "dev:api": "node scripts/run-api.js",
+    "dev:web": "npm --prefix frontend run dev"
+  },
+  "devDependencies": {
+    "concurrently": "9.1.2"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
