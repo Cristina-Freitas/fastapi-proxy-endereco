@@ -9,6 +9,9 @@ from app.schemas import EnderecoResponse, LocalizacaoResponse
 from app.services import consultar_cep
 import httpx
 
+from pathlib import Path
+from fastapi.staticfiles import StaticFiles
+
 app = FastAPI(
     title="API Proxy de Endereço",
     description="Consulta de endereços via ViaCEP",
@@ -115,4 +118,9 @@ async def buscar_localizacao(cep: str):
         "precisao": localizacao.precisao,
         "aproximada": localizacao.precisao != "logradouro",
     }
+
+FRONTEND_DIST = Path(__file__).resolve().parent.parent / "frontend" / "dist"
+
+if FRONTEND_DIST.exists():
+    app.mount("/", StaticFiles(directory=FRONTEND_DIST, html=True), name="frontend")
 
