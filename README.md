@@ -2,6 +2,17 @@
 
 API REST desenvolvida com FastAPI para consulta de endereços via ViaCEP, utilizando Pydantic e requisições assíncronas, acompanhada de um frontend em React com histórico de consultas e mapa interativo.
 
+<img width="1912" height="867" alt="image" src="https://github.com/user-attachments/assets/0bfcade5-a53f-4282-a1af-1763b5ba6788" />
+
+
+
+
+🔗 **Acesse online:** https://fastapi-proxy-endereco.onrender.com
+📄 **Documentação da API:** https://fastapi-proxy-endereco.onrender.com/docs
+
+> Hospedado no plano gratuito do Render: após um período sem acessos, o primeiro carregamento pode levar cerca de um minuto.
+
+
 ## Funcionalidades
 
 - Consulta de CEP com máscara `00000-000` e validação de 8 dígitos.
@@ -156,7 +167,7 @@ A busca tenta, nesta ordem, logradouro + cidade + estado, bairro + cidade + esta
 ## Tecnologias
 
 - **Backend:** Python, FastAPI, Pydantic, HTTPX, Uvicorn, Pytest.
-- **Frontend:** React 19, Vite 6, React Leaflet, Lucide React, Vitest, JavaScrip, CSS.
+- **Frontend:** React 19, Vite 6, React Leaflet, Lucide React, Vitest, JavaScript, CSS.
 - **Serviços externos:** ViaCEP, OpenStreetMap e Nominatim, Leaflet.
 
 ## Limitações
